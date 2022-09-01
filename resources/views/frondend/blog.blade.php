@@ -79,6 +79,7 @@
                                 {!! $post_list->links() !!}
                             </div>
                         </div>
+                        
                         <div class="pro-pagination-style text-center mt-25">
                             <ul>
                                 <li><a class="prev" href="#"><i class="fa fa-angle-double-left"></i></a></li>

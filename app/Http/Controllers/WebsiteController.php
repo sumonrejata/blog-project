@@ -11,6 +11,7 @@ use App\Models\Choose;
 use App\Models\AboutUs;
 use App\Models\BlogPost;
 use App\Models\Testimonial;
+use App\Models\Registration;
 use Illuminate\Http\Request;
 
 

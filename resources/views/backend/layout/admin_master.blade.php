@@ -20,8 +20,10 @@
         <![endif]-->
     <!-- Template assets CSS -->
     <link rel="stylesheet" type="text/css" href="{{ asset('backend') }}/assets/css/assets.css" />
+    <link rel="stylesheet" href="{{ asset('backend') }}/assets/vendors/summernote/css/summernote.min.css">
     <!-- Main style -->
     <link rel="stylesheet" type="text/css" href="{{ asset('backend') }}/assets/css/dashboard.css" />
+    @yield('style')
 </head>
 
 <body class="sidebar-mini">
@@ -250,6 +252,7 @@
     <script src="{{ asset('backend') }}/assets/vendors/datatable/dataTables.bootstrap.min.js"></script>
     <script src="{{ asset('backend') }}/assets/js/functions.js"></script>
     <script src="{{ asset('backend') }}/assets/js/admin.js"></script>
+    <script src="{{ asset('backend') }}/assets/vendors/summernote/js/summernote-lite.min.js"></script>
     <script>
         $('#sampleTable').DataTable();
     </script>
@@ -320,6 +323,24 @@
 
         var ctxd = $("#chart-area").get(0).getContext("2d");
         var doughnutChart = new Chart(ctxd).PolarArea(pdata);
+
+        // Summernote editor
+        $('#summernote').summernote({
+            placeholder: 'Hello stand alone ui',
+            tabsize: 2,
+            height: 300,
+            toolbar: [
+                ['style', ['style']],
+                ['font', ['bold', 'underline', 'clear']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['table', ['table']],
+                ['insert', ['link', 'picture', 'video']],
+                ['view', ['fullscreen', 'codeview', 'help']]
+            ]
+        });
     </script>
+
+
 </body>
 </html>

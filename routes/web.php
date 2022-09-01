@@ -6,6 +6,7 @@ use App\Http\Controllers\WebsiteController;
 use App\Http\Controllers\OurcoursesController;
 use App\Http\Controllers\AchivementController;
 use App\Http\Controllers\FooterController;
+use App\Http\Controllers\RegistrationController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -93,6 +94,10 @@ Route::get('allpost',[AchivementController::class,'AllPost']);
 Route::get('singlepost/{post}',[AchivementController::class,'singlepost']);
 Route::get('blog',[AchivementController::class,'blog'])->name('blog');
 
+
+Route::get('postsingle/{post}',[AchivementController::class,'Postsingle']);
+Route::get('categoryblog',[AchivementController::class,'CategoryBlog']);
+
 //Route::get('singlecat/{post}',[AchivementController::class,'singlecat']);
 
 
@@ -101,10 +106,23 @@ Route::get('createcategory',[AchivementController::class,'CreateCategory']);
 Route::post('insertcategory',[AchivementController::class,'InsertCategory']);
 Route::get('allcategory',[AchivementController::class,'AllCategory']);
 
+// Start Home Registration Route
+Route::get('createregister',[RegistrationController::class,'CreateRegister']);
+Route::post('insertregister',[RegistrationController::class,'InsertRegister']);
+
 // Start Footer Route 
-Route::get('createabout',[FooterController::class,'CreateAbout']);
-Route::post('insertabout',[FooterController::class,'InsertAbout']);
-Route::get('allfooterabout',[FooterController::class,'AllFooterAbout']);
+Route::get('creataboutdesc',[FooterController::class,'CreatAboutDesc']);
+Route::post('insertaboutdesc',[FooterController::class,'InsertAboutDesc']);
+Route::get('allfooterdesc',[FooterController::class,'AllFooterAboutDesc']);
+
+// Start Footer Location Route
+Route::get('createaddress',[FooterController::class,'CreateAddress']);
+Route::post('insertaddress',[FooterController::class,'InsertAddress']);
+Route::get('showaddress',[FooterController::class,'ShowAddress']);
+
+// Start Footer Gallery Route
+Route::get('createfootergallery',[FooterController::class,'CreatefooterGallery']);
+Route::get('showfootergallery',[FooterController::class,'Showfootergallery']);
 
 
 

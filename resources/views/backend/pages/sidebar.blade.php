@@ -94,7 +94,10 @@
                 <i class="treeview-icon fa fa-angle-right"></i>
             </a>
             <ul class="treeview-menu">
-                <li><a class="treeview-item" href="{{ url('createpost') }}">Footer About</a></li>
+                <li><a class="treeview-item" href="{{ url('creataboutdesc') }}">Footer Desc</a></li>
+            </ul>
+            <ul class="treeview-menu">
+                <li><a class="treeview-item" href="{{ url('showaddress') }}">Footer Location</a></li>
             </ul>
             <ul class="treeview-menu">
                 <li><a class="treeview-item" href="{{ url('createpost') }}">QUICK LINK</a></li>
@@ -103,7 +106,7 @@
                 <li><a class="treeview-item" href="{{ url('createpost') }}">COURSES</a></li>
             </ul>
             <ul class="treeview-menu">
-                <li><a class="treeview-item" href="{{ url('createpost') }}">GALLERY</a></li>
+                <li><a class="treeview-item" href="{{ url('showfootergallery') }}">GALLERY</a></li>
             </ul>
             <ul class="treeview-menu">
                 <li><a class="treeview-item" href="{{ url('createpost') }}">News Latter</a></li>

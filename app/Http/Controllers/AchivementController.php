@@ -303,7 +303,7 @@ class AchivementController extends Controller
     //single post
      $cat_details = BlogPost::where('post_id',$post)->get();
 
-       return view('frondend/single_post',compact('post_details','blog_cat','cat_details'));
+       return view('frondend/single_blog',compact('post_details','blog_cat','cat_details'));
     }
 
 
@@ -323,6 +323,24 @@ class AchivementController extends Controller
       return view('frondend/blog',compact('post_list'));
       
     }
+
+    
+
+    public function Postsingle($post)
+    {
+      $postdetails = BlogPost::where('id',$post)->first();
+      $category = Category::withCount('posts')->get();
+      //$cat_detail  = BlogPost::with('category')->where('post_id',$post)->get();
+      $cat_details = BlogPost::with('category')->where('post_id',$post)->get();
+      $latest_posts = BlogPost::with('category')->take(3)->get();
+      //return $latest_posts;
+      return view('frondend/single_blog', compact('postdetails','category','latest_posts','cat_details'));
+    }
+
+   
+
+
+
 
 
     
